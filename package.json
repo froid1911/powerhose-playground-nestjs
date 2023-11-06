@@ -23,6 +23,10 @@
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
+    "@orbitdb/core": "^1.0.0",
+    "document-model": "^1.0.6",
+    "document-model-libs": "^1.1.9",
+    "ipfs-core": "^0.18.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1"
   },
