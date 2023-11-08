@@ -2,6 +2,8 @@ import { Injectable, Logger } from '@nestjs/common';
 import {
   AddFileInput,
   DocumentDrive,
+  DocumentDriveAction,
+  DocumentDriveState,
   utils as DriveUtils,
 } from 'document-model-libs/document-drive';
 import { Document } from 'document-model/document';
@@ -99,5 +101,9 @@ export class AppService {
     await this.saveFile(input.path, document);
     this.document.addFile(input);
     return true;
+  }
+
+  async getDocuments() {
+    return this.document.toDocument();
   }
 }

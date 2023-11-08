@@ -9,7 +9,7 @@ export class AppController {
 
   @Get('/')
   getDocument(@Query('drive') drive, @Query('path') path): Promise<string> {
-    Logger.debug(`getDocument: ${drive} ${path}`);
+    Logger.debug(`getDocument: ${drive} ${path}`, 'AppController');
     return this.appService.getDocument(drive, path);
   }
 
@@ -18,7 +18,13 @@ export class AppController {
     @Body('path') path: AddFileInput,
     @Body('document') document: Document,
   ): Promise<boolean> {
-    Logger.debug(`addDocument: ${path.path}`);
+    Logger.debug(`addDocument: ${path.path}`, 'AppController');
     return this.appService.addDocument(path, document);
+  }
+
+  @Get('/all')
+  getDocuments() {
+    Logger.debug(`get documents`, 'AppController');
+    return this.appService.getDocuments();
   }
 }
